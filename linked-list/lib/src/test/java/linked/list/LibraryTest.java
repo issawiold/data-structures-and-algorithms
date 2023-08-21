@@ -8,14 +8,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
     @Test
-    void testInsertSingleNode() {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.insert(10);
+    public void testAppend() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
 
-        assertEquals("{10} -> NULL", list.toString());
-        assertEquals(1, list.length());
-    }
+        linkedList.append(10);
+        linkedList.append(20);
+        linkedList.append(30);
 
+        assertEquals(10, linkedList.head.data);
+        assertEquals(20, linkedList.head.next.data);
+        assertEquals(30, linkedList.head.next.next.data);
+        assertNull(linkedList.head.next.next.next);}
 
     @Test
     void testInsertAfterSingleNode() {

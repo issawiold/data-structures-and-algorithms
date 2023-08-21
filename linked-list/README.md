@@ -2,6 +2,8 @@
 create an object class of Linked list along with three methods 
 ## Whiteboard Process
 ![white board](https://i.ibb.co/x5FjFBZ/Whiteboard-4.png)
+![white board](https://i.ibb.co/r5Hy21F/Whiteboard-5.png)
+
 ## Approach & Efficiency
 create a new Linked list
 LinkedList <Datatype> name = new LinkedList<>();
@@ -51,3 +53,4 @@ name.tostring
 2. loop throgh the array and add the element of the linked list to the empty string untill it reachs null
 3. on each loop {current.value}-> is add to the string
 4. after the loop finishes return string +NULL
+![solution](https://i.ibb.co/Kj5d3bs/ground-zero-1.png)

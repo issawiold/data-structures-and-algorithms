@@ -29,21 +29,15 @@ class  LinkedList <T> {
 
     public void  insert(T data) {
         Node <T> newNode = new  <T> Node( data);
-        if (head == null) {
-            head = newNode;
-        } else {
-            Node current = head;
-            while (current.next != null) {
-                current = current.next;
-            }
-            current.next = newNode;
-        }
+        Node current=head;
+        newNode.next=current;
+        head=newNode;
     }
-    public boolean includes(T target) {
+    public boolean includes(T value) {
         Node<T> current = head;
 
         while (current != null) {
-            if (current.data == target) {
+            if (current.data.equals(value)) {
                 return true;
             }
             current = current.next;
@@ -86,12 +80,59 @@ class  LinkedList <T> {
     }
     public void remove(int index){
         Node current = head;
-        int counter=0;
-        while (current != null) {
-            if(counter==index){
+        int counter = 0;
 
+        while (current != null && counter < index) {
+            current = current.next;
+            counter++;
+        }
+        }
+        public void append(T data){
+            Node <T> newNode = new  <T> Node( data);
+
+            if (head == null) {
+                head = newNode;
+            } else {
+                Node current = head;
+                while (current.next != null) {
+                    current = current.next;
+                }
+                current.next = newNode;
             }
         }
+    public void insertBefore(T value, T newValue) {
+        if (head.data.equals(value)) {
+            Node<T> newNode = new Node<T>(newValue);
+            newNode.next = head;
+            head = newNode;
+            return;
         }
 
-  }
+        Node<T> current = head;
+        while (current.next != null) {
+            if (current.next.data.equals(value)) {
+                Node<T> newNode = new Node<T>(newValue);
+                newNode.next = current.next;
+                current.next = newNode;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
+        public void insertAfter(T value,T newValue){
+            Node<T> current = head;
+            while (current != null) {
+                if (current.data.equals(value)) {
+                    Node <T> newNode = new  <T> Node( newValue);
+                    newNode.next=current.next;
+                    current.next=newNode;
+                    return;
+                }
+                current = current.next;
+            }
+        }
+
+
+    }
+

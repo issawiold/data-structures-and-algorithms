@@ -9,16 +9,20 @@ import static org.junit.jupiter.api.Assertions.*;
 class LibraryTest {
     @Test
     public void testAppend() {
+        // Create a new linked list
         LinkedList<Integer> linkedList = new LinkedList<>();
 
+        // Append elements to the linked list
         linkedList.append(10);
         linkedList.append(20);
         linkedList.append(30);
 
+        // Verify the contents of the linked list
         assertEquals(10, linkedList.head.data);
         assertEquals(20, linkedList.head.next.data);
         assertEquals(30, linkedList.head.next.next.data);
-        assertNull(linkedList.head.next.next.next);}
+        assertNull(linkedList.head.next.next.next); // Make sure there are no more elements
+    }
 
     @Test
     void testInsertAfterSingleNode() {
@@ -38,6 +42,24 @@ class LibraryTest {
 
         assertEquals("{5} -> {10} -> NULL", list.toString());
         assertEquals(2, list.length());
+    }
+    @Test
+    void testGetValueByReverseIndex(){
+        LinkedList<Integer> list = new LinkedList<>();
+        //places items at the very end
+        list.append(10);
+        list.append(20);
+        list.append(30);
+        //stack items at the beginning
+        list.insert(11);
+        list.insert(22);
+        list.insert(33);
+        Integer result=list.getValueByReverseIndex(3);
+        Integer result2=list.getValueByReverseIndex(4);
+        Integer result3= list.getValueByReverseIndex(7);
+        assertEquals(11,result);
+        assertEquals(22,result2);
+        assertNull(result3);
     }
 
 

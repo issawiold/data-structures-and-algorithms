@@ -3,7 +3,7 @@ create an object class of Linked list along with three methods
 ## Whiteboard Process
 ![white board](https://i.ibb.co/x5FjFBZ/Whiteboard-4.png)
 ![white board](https://i.ibb.co/r5Hy21F/Whiteboard-5.png)
-
+![white board](https://i.ibb.co/Sd4qm60/Whiteboard-6.png)
 ## Approach & Efficiency
 create a new Linked list
 LinkedList <Datatype> name = new LinkedList<>();
@@ -54,3 +54,4 @@ name.tostring
 3. on each loop {current.value}-> is add to the string
 4. after the loop finishes return string +NULL
 ![solution](https://i.ibb.co/Kj5d3bs/ground-zero-1.png)
+![solution](https://i.ibb.co/9c0hgRB/tests.png)

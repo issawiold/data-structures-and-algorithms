@@ -1,9 +1,8 @@
 # Linked Lists
-create an object class of Linked list along with three methods 
+create an object class of Linked list along with multiple methods 
 ## Whiteboard Process
 ![white board](https://i.ibb.co/x5FjFBZ/Whiteboard-4.png)
 ![white board](https://i.ibb.co/r5Hy21F/Whiteboard-5.png)
-![white board](https://i.ibb.co/Sd4qm60/Whiteboard-6.png)
 ## Approach & Efficiency
 create a new Linked list
 LinkedList <Datatype> name = new LinkedList<>();
@@ -54,4 +53,16 @@ name.tostring
 3. on each loop {current.value}-> is add to the string
 4. after the loop finishes return string +NULL
 ![solution](https://i.ibb.co/Kj5d3bs/ground-zero-1.png)
+## Whiteboard Process
+![white board](https://i.ibb.co/1Gmd8kx/Whiteboard-6-1.png)
+## Solution
 ![solution](https://i.ibb.co/9c0hgRB/tests.png)
+## Approach & Efficiency
+check if the value of the head is null or if the inputed value is less than zero , in that case return null .
+get the length of the linked list using a counter , 
+turn the reverse index into index by subtracting the value from the last counter and also subtract a one 
+if index is less than zero return null
+if not find the node with that index and return the data stored within it 
+if by the end you've not found anything return null
+### efficiency
+O(n)/O(1)

@@ -66,3 +66,16 @@ if not find the node with that index and return the data stored within it
 if by the end you've not found anything return null
 ### efficiency
 O(n)/O(1)
+## Whiteboard Process
+![white board](https://i.ibb.co/h1J1xGg/Whiteboard-7.png)
+## Solution
+![solution](https://i.ibb.co/tXrqyjs/test8.png)
+## Approach & Efficiency
+create a new LinkedList, then createa new node to the head of the linkedList
+assuming the inputs are list1 and list2 ,wile the newly created one is list3 
+set the value of current to list1.head and current.next to list2.head
+now set list1.head to list1.head.next and list2.head to list2.head.next 
+now set current to current.next.next repeat the previous steps until either one of the two lists.head become null
+using a conditional if statement check to find which one's head wasn't Null 
+and set the value of current to it 
+return the linked list

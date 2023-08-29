@@ -65,12 +65,12 @@ class LibraryTest {
         public void testZipLinkedList() {
             LinkedList<Integer> list1 = new LinkedList<>();
             LinkedList<Integer> list2 = new LinkedList<>();
-            list2.insert(30);
-            list2.insert(20);
-            list2.insert(10);
-            list1.insert(3);
-            list1.insert(2);
-            list1.insert(1);
+            list1.insert(30);
+            list1.insert(20);
+            list1.insert(10);
+            list2.insert(3);
+            list2.insert(2);
+            list2.insert(1);
             LinkedList<Integer> mergedList = LinkedList.zipLists(list1, list2);
             assertEquals("{10} -> {1} -> {20} -> {2} -> {30} -> {3} -> NULL", mergedList.toString());
         }

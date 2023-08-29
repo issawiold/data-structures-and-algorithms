@@ -155,17 +155,17 @@ public class LinkedList<T> {
         Node<T> current = null;
         while (link1.head != null && link2.head != null) {
             if (mergedList.head == null) {
-                mergedList.head = link2.head;
+                mergedList.head = link1.head;
                 current = mergedList.head;
             } else {
-                current.next = link2.head;
+                current.next = link1.head;
                 current = current.next;
             }
-            link2.head = link2.head.next;
-
-            current.next = link1.head;
-            current = current.next;
             link1.head = link1.head.next;
+
+            current.next = link2.head;
+            current = current.next;
+            link2.head = link2.head.next;
         }
 
         if (link1.head != null) {

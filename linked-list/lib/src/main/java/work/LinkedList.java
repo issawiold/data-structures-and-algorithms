@@ -1,5 +1,7 @@
 package work;
 
+import java.util.ArrayList;
+
 public class LinkedList<T> {
     Node<T> head;
 
@@ -176,6 +178,20 @@ public class LinkedList<T> {
         }
 
         return mergedList;
+    }
+    public static <T> boolean palindromeOrNot(LinkedList<T> link){
+        Node  beginning=link.head;
+        int counter=0;
+        while(beginning!=null){
+            Node  ending= new Node<T>(link.getValueByReverseIndex(counter));
+            if(!beginning.data.equals(ending.data)){
+                return false;
+            }
+            counter++;
+            beginning=beginning.next;
+        }
+        return true;
+
     }
 
 

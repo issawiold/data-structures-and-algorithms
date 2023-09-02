@@ -39,7 +39,6 @@ class LibraryTest {
         LinkedList<Integer> list = new LinkedList<>();
         list.insert(10);
         list.insertBefore(10, 5);
-
         assertEquals("{5} -> {10} -> NULL", list.toString());
         assertEquals(2, list.length());
     }
@@ -74,6 +73,32 @@ class LibraryTest {
             LinkedList<Integer> mergedList = LinkedList.zipLists(list1, list2);
             assertEquals("{10} -> {1} -> {20} -> {2} -> {30} -> {3} -> NULL", mergedList.toString());
         }
+        @Test
+        public void testPalindromeOrNot(){
+        LinkedList<Integer> list = new LinkedList<>();
+        LinkedList<Integer> list1 = new LinkedList<>();
+        list.insert(30);
+        list.insert(20);
+        list.insert(10);
+        boolean bool=LinkedList.palindromeOrNot(list);
+        assertFalse(bool);
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        boolean bool1=LinkedList.palindromeOrNot(list);
+        assertTrue(bool1);
+        list1.insert(30);
+        list1.insert(20);
+        list1.insert(10);
+        boolean bool2=LinkedList.palindromeOrNot(list1);
+        assertFalse(bool2);
+        list1.insert(20);
+        list1.insert(30);
+        boolean bool3=LinkedList.palindromeOrNot(list1);
+        assertTrue(bool3);
+
+        }
+
     }
 
 

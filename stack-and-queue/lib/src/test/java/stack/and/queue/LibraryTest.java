@@ -143,4 +143,40 @@ class StackTest{
 
 
     }
+    class PseudoQueueTest {
+    @Test void testPseudoQueue(){
+        PseudoQueue<Integer>  pseudoQueue= new PseudoQueue<>();
+        pseudoQueue.enqueue(12);
+        pseudoQueue.enqueue(13);
+        pseudoQueue.enqueue(14);
+        pseudoQueue.enqueue(15);
+        assertNotNull(pseudoQueue);
+        int result1=pseudoQueue.dequeue();
+        assertEquals(12,result1);
+        int result2=pseudoQueue.dequeue();
+        assertEquals(13,result2);
+        int result3=pseudoQueue.dequeue();
+        assertEquals(14,result3);
+        int result4=pseudoQueue.dequeue();
+        assertEquals(15,result4);
+
+
+
+    }
+        private final PrintStream standardOut = System.out;
+        private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+        @BeforeEach
+        public void setUp() {
+            System.setOut(new PrintStream(outputStreamCaptor));
+        }
+        @Test void testPseudoQueueDequeueExeptions(){
+            PseudoQueue<Integer>  pseudoQueue1= new PseudoQueue<>();
+            Integer result=pseudoQueue1.dequeue();
+            assertEquals("stack is empty", outputStreamCaptor.toString().trim());
+        }
+        @AfterEach
+        public void tearDown() {
+            System.setOut(standardOut);
+        }
+    }
 

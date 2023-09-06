@@ -178,5 +178,48 @@ class StackTest{
         public void tearDown() {
             System.setOut(standardOut);
         }
+
     }
 
+
+ class AnimalShelterTest {
+
+    private AnimalShelter shelter;
+
+    @BeforeEach
+    public void setUp() {
+        shelter = new AnimalShelter();
+    }
+
+    @Test
+    public void testEnqueueAndDequeueDog() {
+        shelter.enqueue(new Animal("dog", "Buddy"));
+        shelter.enqueue(new Animal("dog", "Max"));
+        shelter.enqueue(new Animal("cat", "Whiskers"));
+
+        assertEquals("Buddy", shelter.dequeue("dog").getName());
+    }
+
+    @Test
+    public void testEnqueueAndDequeueCat() {
+        shelter.enqueue(new Animal("dog", "Buddy"));
+        shelter.enqueue(new Animal("cat", "Whiskers"));
+        shelter.enqueue(new Animal("cat", "Fluffy"));
+
+        assertEquals("Whiskers", shelter.dequeue("cat").getName());
+    }
+
+    @Test
+    public void testInvalidPreference() {
+        shelter.enqueue(new Animal("dog", "Buddy"));
+        shelter.enqueue(new Animal("cat", "Whiskers"));
+
+        assertNull(shelter.dequeue("parrot"));
+    }
+
+    @Test
+    public void testEmptyShelter() {
+        assertNull(shelter.dequeue("dog"));
+        assertNull(shelter.dequeue("cat"));
+    }
+}

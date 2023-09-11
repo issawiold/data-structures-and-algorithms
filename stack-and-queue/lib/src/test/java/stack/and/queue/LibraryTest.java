@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -221,5 +222,29 @@ class StackTest{
     public void testEmptyShelter() {
         assertNull(shelter.dequeue("dog"));
         assertNull(shelter.dequeue("cat"));
+    }
+}
+class CheckBracketsClosedTest{
+    @Test
+    public void testCheckBracketsClosed(){
+        CheckBracketsClosed sut=new CheckBracketsClosed();
+        boolean result1=sut.checkBracketsClosed("{}");
+        boolean result2=sut.checkBracketsClosed("{}(){}");
+        boolean result3=sut.checkBracketsClosed("()[[Extra Characters]]");
+        boolean result4=sut.checkBracketsClosed("(){}[[]]");
+        boolean result5=sut.checkBracketsClosed("{}{Code}[Fellows](())");
+        boolean result6=sut.checkBracketsClosed("[({}]");
+        boolean result7=sut.checkBracketsClosed("(](");
+        boolean result8=sut.checkBracketsClosed("{(})");
+        assertTrue(result1);
+        assertTrue(result2);
+        assertTrue(result3);
+        assertTrue(result4);
+        assertTrue(result5);
+        assertFalse(result6);
+        assertFalse(result7);
+        assertFalse(result8);
+
+
     }
 }

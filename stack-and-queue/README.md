@@ -11,7 +11,7 @@ to enqueue data to one use push from stack and to dequeue data pop the data from
 # Multi-bracket Validation.
 
 ## Whiteboard Process
-![the white board of code challenge ](hhttps://i.ibb.co/MNZN9y9/Whiteboard-12.png)
+![the white board of code challenge ](https://i.ibb.co/MNZN9y9/Whiteboard-12.png)
 ## Approach & Efficiency
 Initialize an empty stack or queue.
 Iterate through each character in the input string.

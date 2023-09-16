@@ -22,3 +22,6 @@ Check if the popped/dequeued element matches the current closing bracket. If it 
 After iterating through all the characters, check if the stack or queue is empty. If it is, return True because all brackets are closed properly. Otherwise, return False.
  ## Solution
 ![Solution](https://i.ibb.co/cQNncmD/test.png)
+
+
+
